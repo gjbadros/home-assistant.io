@@ -39,6 +39,10 @@ name:
   required: false
   default: Flux
   type: string
+set_state_service:
+  description: The name of the light domain service that will be called to change the state of the light. When set, this service will be called even if the light is off, so that the new color is already set the next time the light is turned on.  If unset, light.turn_on will be used if and only if the light is already on, thus updating the color of the light.  E.g., to use this with lights such as LiFX bulbs which support changing colors even when off via the light.lifx_set_state service, set this to "lifx_set_state".
+  required: false
+  type: string
 start_time:
   description: The start time.
   required: false
